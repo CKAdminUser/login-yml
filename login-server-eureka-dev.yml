@@ -1,0 +1,10 @@
+#eureka client 通用配置文件
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://LoginServerEureka8762:8762/eureka/,http://LoginServerEureka8761:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id:  ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
